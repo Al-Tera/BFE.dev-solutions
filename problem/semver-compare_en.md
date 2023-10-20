@@ -51,3 +51,16 @@ function compare(v1, v2) {
 ### Complexity
 
 This solution has a time complexity of O(n), where n is the number of elements in the version string (which is constant and equals to 3 in this case), and a space complexity of O(1) as no additional space that scales with input size is used.
+
+> Altair
+```
+function compare(v1, v2) {
+  const [a1, a2] = [v1.split('.'), v2.split('.')]
+  if(v1 === v2) return 0
+  for(i = 0; i < a1.length; i++){
+    const [x, y] = [parseInt(a1[i]), parseInt(a2[i])]
+    if(x > y) return 1
+    else if(x < y) return -1
+  }
+}
+```
